@@ -3,13 +3,13 @@ const Manager = require('./childManager');
 const app = express();
 
 const myManager = new Manager();
-for(let i = 0; i < 100; i++) {
+for(let i = 0; i < 1000; i++) {
     myManager.addToQueue('hello');
 }
 
 for(let i = 0; i < 1000000000; i++) {
-    if(!(i % 10000000)) {
-        console.log('ran a million')
+    if(!(i % 1000000)) {
+        console.log('ran 1 million')
     }
 }
 

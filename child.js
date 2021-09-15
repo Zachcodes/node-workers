@@ -1,7 +1,7 @@
 class ChildClass {
     constructor() {
         this.messageQueue = [];
-        this.intervalId = setInterval(this.processNextInQueue.bind(this), 500)
+        this.processNextInQueue();
     }
 
     handleMessage(msg) {
@@ -9,8 +9,11 @@ class ChildClass {
     }
 
     processNextInQueue() {
-        console.log('next in queue');
-        console.log(this.messageQueue.splice(0, 1))
+        setTimeout(() => {
+            this.messageQueue.map( message => {
+                console.log('Message: ', message)
+            })
+        }, 300);
     }
 }
 
